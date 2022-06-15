@@ -128,6 +128,9 @@ void NativeBrowserViewViews::SetBounds(const gfx::Rect& bounds) {
   auto* view = iwc_view->GetView();
   view->SetBoundsRect(bounds);
   ResetAutoResizeProportions();
+
+  view->InvalidateLayout();
+  view->SchedulePaint();
 }
 
 gfx::Rect NativeBrowserViewViews::GetBounds() {
